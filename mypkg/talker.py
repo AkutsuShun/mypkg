@@ -9,21 +9,16 @@ class Talker():
          node.create_timer(0.5, self.cb) #selfをつける。
 
     def cb(self):      #インデントをあげてselfを引数に
-         msg = Int16()
-         msg.data = self.n     #talker -> self
-         self.pub.publish(msg) #talker -> self
-         self.n += 1           #talker -> self
+        msg = Int16()
+        msg.data = self.n     #talker -> self
+        self.pub.publish(msg) #talker -> self
+        self.n += 1           #talker -> self
 
 def main():
     rclpy.init()
     node = Node("talker")
-    talker = Talker(node)
+    talker = Talker(node) #この一行でパブリッシャが動き出す。
     rclpy.spin(node)
 
 if __name__ == '__main__':
     main()
-
-rclpy.init()
-node = Node("talker")
-talker = Talker(node) #この一行でパブリッシャが動き出す。
-rclpy.spin(node)
