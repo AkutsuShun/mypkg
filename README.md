@@ -27,6 +27,7 @@ $ ros2 run mypkg talker
   talkerがカウントした整数を標準出力に表示する
 
 ### 実行例と実行結果
+taler実行後に実行する
 
 ```
 $ ros2 run mypkg listener
