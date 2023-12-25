@@ -1,4 +1,4 @@
-# ros-2-mypkg  [![test](https://github.com/AkutsuShun/ros-2-mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/AkutsuShun/ros-2-mypkg/actions/workflows/test.yml)
+# mypkg  [![test](https://github.com/AkutsuShun/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/AkutsuShun/mypkg/actions/workflows/test.yml)
 
 このリポジトリは、ロボットシステム学２０２３にて、ROS 2の練習をするためのリポジトリである
 
@@ -6,7 +6,7 @@
 
 ROS 2環境下のターミナル上に以下のコードを入力してインストールする
 ```
-$ git clone https://github.com/AkutsuShun/ros-2-mypkg.git
+$ git clone https://github.com/AkutsuShun/mypkg.git
 ```
 
 # taker
