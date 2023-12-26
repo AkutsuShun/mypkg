@@ -12,6 +12,7 @@ $ git clone https://github.com/AkutsuShun/mypkg.git
 # taker
 
 ### 機能
+  listnerと組み合わせて使用する
   0.5秒おきに整数をカウントする
 
 ### 実行例
@@ -24,7 +25,8 @@ $ ros2 run mypkg talker
 # listener
 
 ### 機能
-  talkerがカウントした整数を標準出力に表示する
+  talkerと組み合わせて使用する
+  talkerがカウントした整数をターミナル上に表示する
 
 ### 実行例と実行結果
 taler実行後に実行する
@@ -42,7 +44,7 @@ $ ros2 run mypkg listener
 # talk_listen.launch
 
 ### 機能
-  talkerとlistenerを同時に起動し、0.5秒おきに整数をカウントして標準出力に表示する
+  talkerとlistenerを同時に起動し、0.5秒おきに整数をカウントしてターミナル上に表示する
 
 ### 実行例と実行結果
 
