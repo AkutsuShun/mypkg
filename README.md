@@ -14,7 +14,7 @@ $ git clone https://github.com/AkutsuShun/mypkg.git
 ### 機能
   listnerと組み合わせて使用する
 
-  0.5秒おきに整数をカウントする
+  0.5秒おきに整数をカウントし、countupというトピックに出力する
 
 ### 実行例
 
@@ -27,8 +27,8 @@ $ ros2 run mypkg talker
 
 ### 機能
   talkerと組み合わせて使用する
-  
-  talkerがカウントした整数をターミナル上に表示する
+
+  talkerがカウントした整数をcountupトピックから受け取り、ターミナル上に表示する
 
 ### 実行例と実行結果
 taler実行後に実行する
