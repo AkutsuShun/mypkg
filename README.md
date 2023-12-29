@@ -4,17 +4,20 @@
 
 # インストール方法
 
-ROS 2環境下のターミナル上に以下のコードを入力してインストールする
+ROS 2をインストールし、ホームディレクトリにて下記のコードを実行してクローンする
 ```
 $ git clone https://github.com/AkutsuShun/mypkg.git
 ```
 
+### トピックについて
+* トピックとはノード間でやり取りされるデータであり、パブリッシャが配信したトピックをサブスクライバが受け取ることで通信を行う。
+* 本パッケージでは、talkerが配信した整数のカウントデータが入ったトピック"countup"をlistenerが受け取り、listenerを実行したターミナル上にカウントを表示する
+
 # taker
 
 ### 機能
-  listnerと組み合わせて使用する
-
-  0.5秒おきに整数をカウントし、countupというトピックに出力する
+  * 本パッケージのパブリッシャ
+  * 0.5秒おきに整数をカウントし、countupというトピックを出力する
 
 ### 実行例
 
@@ -26,9 +29,8 @@ $ ros2 run mypkg talker
 # listener
 
 ### 機能
-  talkerと組み合わせて使用する
-
-  talkerがカウントした整数をcountupトピックから受け取り、ターミナル上に表示する
+  * 本パッケージのサブスクライバ
+  * talkerから送られたトピックを受け取り、カウントした整数をターミナル上に表示する
 
 ### 実行例と実行結果
 taler実行後に実行する
@@ -69,10 +71,10 @@ $ ros2 launch mypkg talk_listen.launch.py
 * ROS 2 foxy
 
 ## テスト環境
-* ROS 2 foxy
-* ubuntu 20.04 on windows
+* Ubuntu 20.04 on windows
+  * ROS 2 foxy
 
-# 権利
+# 著作権及びライセンスについて
 * このソフトウェアパッケージは、３条項ＢＳＤライセンスの下、再頒布及び使用が許可されます。
 * このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
   * [ryuichiueda/my_slides robosys_2022/lesson8.md](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson8.html#/)
