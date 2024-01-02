@@ -3,21 +3,23 @@
 このリポジトリは、ロボットシステム学２０２３にて、ROS 2の練習をするためのリポジトリである
 
 # インストール方法
-
-ROS 2をインストールし、ホームディレクトリにて下記のコードを実行してクローンする
+ROS 2をインストールしたのち、下記のコードを実行する
 ```
+$ mkdir -p ros2_ws/src
+$ cd ros2_ws/src
 $ git clone https://github.com/AkutsuShun/mypkg.git
 ```
 
-### トピックについて
-* トピックとはノード間でやり取りされるデータであり、パブリッシャが配信したトピックをサブスクライバが受け取ることで通信を行う。
-* 本パッケージでは、talkerが配信した整数のカウントデータが入ったトピック"countup"をlistenerが受け取り、listenerを実行したターミナル上にカウントを表示する
+# 機能
+本パッケージにはtalkerとlisaterという2つのノードと、countupというトピックが存在し、それぞれの機能は以下のようになっている。
+
+# countup
+* 本パッケージのトピック
+* talkerからパブリッシュされたint16型符号付き整数のメッセージをlistenerに繋いでいる
 
 # taker
-
-### 機能
   * 本パッケージのパブリッシャ
-  * 0.5秒おきに整数をカウントし、countupというトピックを出力する
+  * 0.5秒おきに整数(int16型)を1ずつ増加し、"countup"トピックにパブリッシュする
 
 ### 実行例
 
@@ -27,10 +29,8 @@ $ ros2 run mypkg talker
 ```
 
 # listener
-
-### 機能
   * 本パッケージのサブスクライバ
-  * talkerから送られたトピックを受け取り、カウントした整数をターミナル上に表示する
+  * "countup"トピックよりtalkerがパブリッシュしたデータを受け取り、ターミナル上に表示する
 
 ### 実行例と実行結果
 taler実行後に実行する
@@ -45,10 +45,8 @@ $ ros2 run mypkg listener
 [INFO] [1703536811.490957362] [listener]: Listen: 5
 ```
 
-# talk_listen.launch
-
-### 機能
-  talkerとlistenerを同時に起動し、0.5秒おきに整数をカウントしてターミナル上に表示する
+# 2つを同時に実行する方法について
+* talk_listen.launchを用いて、2つを同時に実行することも可能
 
 ### 実行例と実行結果
 
@@ -68,11 +66,11 @@ $ ros2 launch mypkg talk_listen.launch.py
 
 ## 必用なソフトウェア
 * Python
-* ROS 2 foxy
+* ROS 2
 
 ## テスト環境
-* Ubuntu 20.04 on windows
-  * ROS 2 foxy
+* Ubuntu 22.04 on windows
+  * ROS 2 humble
 
 # 著作権及びライセンスについて
 * このソフトウェアパッケージは、３条項ＢＳＤライセンスの下、再頒布及び使用が許可されます。
